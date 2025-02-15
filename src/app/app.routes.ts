@@ -8,6 +8,8 @@ import { CartComponent } from './features/pages/cart/cart.component';
 import { ProductsComponent } from './features/pages/products/products.component';
 import { BrandsComponent } from './features/pages/brands/brands.component';
 import { CategoriesComponent } from './features/pages/categories/categories.component';
+import { authGuard } from './core/guard/auth-guard/auth.guard';
+// import { checkTokenGuard } from './core/guard/check-token.guard';
 
 export const routes: Routes = [
 
@@ -15,7 +17,7 @@ export const routes: Routes = [
         {path:'login',component:LoginComponent,title:'login'},
         {path:'signup',component:RegisterComponent,title:'signup'}
 ]},
-    {path:'',component:MainLayoutComponent,children:[
+    {path:'',component:MainLayoutComponent,canActivate:[authGuard],children:[
         {path:'',redirectTo:'home',pathMatch:'full'},
         {path:'home',component:HomeComponent,title:'home'},
         {path:'cart',component:CartComponent,title:'cart'},
