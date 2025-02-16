@@ -1,17 +1,25 @@
+<div class="md:w-[99%] mx-auto">
+    <div class="sm:w-[30%] mx-auto">
+      
+        <input [(ngModel)]="word"  type="text" class="my-4 w-full rounded-md border" placeholder="Enter product Name... ">
+  
+    </div>
+
 <div class="flex flex-wrap">
 
-    @for (item of productlist; track $index) {
-       <div class="md:w-2/4 lg:w-1/4 p-3 ">
+    @for (item of productlist | filter : word ; track $index) {
+       <div [routerLink]="['/productDetails',item._id]" class="md:w-2/4 lg:w-1/4 p-3 cursor-pointer ">
 <div class="card p-2 rounded bg-slate-100 h-full">
 <img [src]="item.imageCover" class="w-full" alt=""> 
 <p class="text-green-400 font-light">{{item.category.name}}</p>
 <h5 class="text-black">{{item.title.split(' ').splice(0,4).join(' ')}}</h5>
 <div class="price flex justify-between">
-    <span>{{item.price}}EGP</span>
+    <span>{{item.price}} EGP</span>
     <span><i class="fa fa-star text-yellow-500"></i>{{item.ratingsQuantity}} </span>
 </div>
 </div>
 </div> 
     }
 
+</div>
 </div>

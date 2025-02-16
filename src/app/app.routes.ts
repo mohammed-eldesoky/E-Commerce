@@ -9,7 +9,9 @@ import { ProductsComponent } from './features/pages/products/products.component'
 import { BrandsComponent } from './features/pages/brands/brands.component';
 import { CategoriesComponent } from './features/pages/categories/categories.component';
 import { authGuard } from './core/guard/auth-guard/auth.guard';
+import { ProductDetailsComponent } from './features/pages/productdetails/product-details.component';
 // import { checkTokenGuard } from './core/guard/check-token.guard';
+
 
 export const routes: Routes = [
 
@@ -22,6 +24,7 @@ export const routes: Routes = [
         {path:'home',component:HomeComponent,title:'home'},
         {path:'cart',component:CartComponent,title:'cart'},
         {path:'products',component:ProductsComponent,title:'products'},
+        {path:'productDetails/:id',component:ProductDetailsComponent,title:'product details'},
         {path:'brands',component:BrandsComponent,title:'brands'},
          {path:'categories',component:CategoriesComponent,title:'categories'},
         {path:'home',component:HomeComponent,title:'home'},

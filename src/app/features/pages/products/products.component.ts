@@ -1,15 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../../../core/services/products/products.service';
 import { products } from '../../../shared/interface/iproducts';
+import { DatePipe } from '@angular/common';
+import { FilterPipe } from "../../../shared/pipe/filter.pipe";
+import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-products',
-  imports: [],
+  imports: [FilterPipe,FormsModule,RouterLink],
   templateUrl: './products.component.html',
   styleUrl: './products.component.scss'
 })
 
 export class  ProductsComponent implements OnInit {
+word:string='';
+
   productlist:products[]=[];
 constructor(private _ProductsService:ProductsService){
 

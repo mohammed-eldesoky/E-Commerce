@@ -12,5 +12,10 @@ export class ProductsService  {
  getProducts ():Observable <any>{
   return this.http.get(`https://ecommerce.routemisr.com/api/v1/products`);
  }
+
+ getspecificProduct (id:string):Observable <any>{
+  return this.http.get(`https://ecommerce.routemisr.com/api/v1/products/${id}`);
+ }
+ 
  
 }

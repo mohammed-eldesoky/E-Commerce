@@ -15,7 +15,7 @@ export class AuthService {
   constructor(private _HttpClient:HttpClient, @Inject(PLATFORM_ID) Id:object,private router:Router ) {
  if(isPlatformBrowser(Id)){
   if(localStorage.getItem('userToken') !==null){
-this.decodeUserData
+this.decodeUserData();
   }
  }
    }
