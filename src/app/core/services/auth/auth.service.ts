@@ -6,6 +6,7 @@ import { jwtDecode, JwtPayload } from "jwt-decode";
 import { platform } from 'os';
 import { isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
+import { baseUrl } from '../../constant/baseUrl';
 @Injectable({
   providedIn: 'root'
 })
@@ -21,11 +22,11 @@ this.decodeUserData();
    }
 
   register(formData:Auth):Observable<any>{
-return this._HttpClient.post(`https://ecommerce.routemisr.com/api/v1/auth/signup`,formData)
+return this._HttpClient.post(`${baseUrl.BaseUrl}/auth/signup`,formData)
   }
 
   login(formData:Auth){
-    return this._HttpClient.post(`https://ecommerce.routemisr.com/api/v1/auth/signin`,formData)
+    return this._HttpClient.post(`${baseUrl.BaseUrl}/auth/signin`,formData)
   }
 
   decodeUserData(){

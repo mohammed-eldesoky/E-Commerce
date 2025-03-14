@@ -22,7 +22,15 @@
             <a routerLink="/products" routerLinkActive="bg-green-400 text-white rounded-lg" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-700  md:dark:hover:text-green-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Products</a>
           </li>
           <li>
-            <a routerLink="/cart" routerLinkActive="bg-green-400 text-white rounded-lg" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-700  md:dark:hover:text-green-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Cart</a>
+            <a routerLink="/cart" routerLinkActive="bg-green-400 text-white rounded-lg" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-700  md:dark:hover:text-green-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+              
+<button type="button" class="relative inline-flex items-center p-2 text-sm font-medium text-center text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600">
+<i class="fa fa-shopping-cart"></i>
+  <span class="sr-only">Notifications</span>
+    <div class="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -end-2">{{cartNumber}}</div>
+  </button>
+  
+              </a>
           </li>
           <li>
             <a routerLink="/brands" routerLinkActive="bg-green-400 text-white rounded-lg" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-700  md:dark:hover:text-green-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Brands</a>

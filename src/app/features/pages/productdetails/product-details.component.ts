@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from '../../../core/services/products/products.service';
 import { products } from '../../../shared/interface/iproducts';
+import { ToastrService } from 'ngx-toastr';
+import { CartService } from '../../../core/services/cart/cart.service';
 
 
 @Component({
@@ -14,7 +16,7 @@ templateUrl: './product-details.component.html',
 export class ProductDetailsComponent  {
   id:any;
   details!:products;
-constructor(private activatedrout:ActivatedRoute,private product:ProductsService){
+constructor(private activatedrout:ActivatedRoute,private product:ProductsService,private cartser:CartService,private tostar:ToastrService ){
 activatedrout.params.subscribe(res=>{
   console.log(res);
   this.id=res['id']
@@ -37,4 +39,22 @@ console.log(err);
     })
   }
   
+
+    
+  addProduct(id:string){
+    this.cartser.addTocart(id).subscribe({
+next:(res)=>{
+console.log(res);
+this.tostar.success(res.message,"success",{
+  progressBar:true,
+})
+
+},
+error:(err)=>{
+console.log(err);
+
+}
+    })
+  }
+
 }
