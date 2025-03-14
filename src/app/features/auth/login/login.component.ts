@@ -3,10 +3,11 @@ import { AuthService } from '../../../core/services/auth/auth.service';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { NgIf } from '@angular/common';
+import { FooterComponent } from "../../layout/footer/footer.component";
 
 @Component({
   selector: 'app-login',
-  imports: [ReactiveFormsModule,NgIf,RouterLink],
+  imports: [ReactiveFormsModule, NgIf, RouterLink, FooterComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })

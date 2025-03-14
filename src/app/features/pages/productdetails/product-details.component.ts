@@ -4,11 +4,12 @@ import { ProductsService } from '../../../core/services/products/products.servic
 import { products } from '../../../shared/interface/iproducts';
 import { ToastrService } from 'ngx-toastr';
 import { CartService } from '../../../core/services/cart/cart.service';
+import { FooterComponent } from "../../layout/footer/footer.component";
 
 
 @Component({
   selector: 'app-product-details',
-  imports: [],
+  imports: [FooterComponent],
  
 templateUrl: './product-details.component.html',
   styleUrl: './product-details.component.scss'

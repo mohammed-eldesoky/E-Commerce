@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../../core/services/cart/cart.service';
 import {  RootObject } from '../../../shared/interface/cart';
 import { RouterLink } from '@angular/router';
+import { FooterComponent } from "../../layout/footer/footer.component";
 
 @Component({
   selector: 'app-cart',
-  imports: [RouterLink],
+  imports: [RouterLink, FooterComponent],
 templateUrl: './cart.component.html',
   styleUrl: './cart.component.scss'
 })

@@ -3,9 +3,10 @@ import {AbstractControl, FormControl, FormGroup, ReactiveFormsModule, Validators
 import { AuthService } from '../../../core/services/auth/auth.service';
 import { Router } from '@angular/router';
 import { NgIf } from '@angular/common';
+import { FooterComponent } from "../../layout/footer/footer.component";
 @Component({
   selector: 'app-register',
-  imports: [ReactiveFormsModule,NgIf],
+  imports: [ReactiveFormsModule, NgIf, FooterComponent],
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss'
 })
