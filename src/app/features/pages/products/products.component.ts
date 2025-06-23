@@ -43,21 +43,28 @@ this.dataRes=false;
 
 }
   
-  addProduct(id:string){
-    this.cartser.addTocart(id).subscribe({
-next:(res)=>{
-console.log(res);
-this.tostar.success(res.message,"success",{
-  progressBar:true,
-})
 
-},
-error:(err)=>{
-console.log(err);
 
-}
-    })
+addProduct(id: string) {
+  if (!localStorage.getItem('userToken')) {
+    this.tostar.warning('please login first', 'sorry', {
+      progressBar: true,
+    });
+    return;
   }
+
+  this.cartser.addTocart(id).subscribe({
+    next: (res) => {
+      console.log(res);
+      this.tostar.success(res.message, "success", {
+        progressBar: true,
+      });
+    },
+    error: (err) => {
+      console.log(err);
+    }
+  });
+}
 
 }
 
