@@ -45,25 +45,33 @@ this.dataRes=false;
   
 
 
-addProduct(id: string) {
-  if (!localStorage.getItem('userToken')) {
-    this.tostar.warning('please login first', 'sorry', {
+
+addProduct(id:string){
+  if (!localStorage.getItem('userToken')) { // check login 
+    this.tostar.warning('Please Login First ', 'Sorry', {
       progressBar: true,
     });
     return;
   }
 
   this.cartser.addTocart(id).subscribe({
-    next: (res) => {
+    next:(res)=>{
       console.log(res);
-      this.tostar.success(res.message, "success", {
-        progressBar: true,
+      this.tostar.success(res.message,"success",{
+        progressBar:true,
+      });
+
+
+      this.cartser.getLogedcartt().subscribe({  // update badge
+        next: (res) => {
+          this.cartser.cartNumber.next(res.numOfCartItems);
+        }
       });
     },
-    error: (err) => {
+    error:(err)=>{
       console.log(err);
     }
-  });
+  })
 }
 
 }
